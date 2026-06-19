@@ -389,7 +389,7 @@ setup_warp_wgquick() {
     if ! grep -q '^PersistentKeepalive =' "${WARP_CONF}"; then
         sed -i '/^Endpoint =/a PersistentKeepalive = 25' "${WARP_CONF}"
     else
-        sed -i 's/^PersistentKeepalive = .*/PersistentKeepalive = 25/g' "${WARP_CONF}"
+        sed -i 's/^PersistentKeepalive = .*/PersistentKeepalive = 15/g' "${WARP_CONF}"
     fi
 
     wg-quick down warp 2>/dev/null || true
